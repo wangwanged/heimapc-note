@@ -295,8 +295,8 @@
 **接口描述：**
 <h4>1. 线上地址</h4>
 <pre><code data-language="http" class="lang-http">http://ttapi.research.itcast.cn/mp/v1_0/user/profile
-
 </code></pre>
+
 <h3>2.&nbsp; 返回HTTP状态码</h3>
 <p><strong>1. 201 OK</strong><br>
 3. 401 token过期或未传<br>
@@ -309,7 +309,7 @@
 | 参数名称  | 参数值  |  是否必须 | 示例  | 备注  |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
 | Content-Type  |  application/json | 是  |   |   |
-| Authorization  |   | 是  |  Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDMyODQzNjYsInVzZXJfaWQiOjF9.mLYitrKsn4E4KdQd0CNPugKrH8uQmXEQTlG_JutC8jU |  refresh_token |
+| Authorization  |   | 是  | Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDMyODQzNjYsInVzZXJfaWQiOjF9.mLYitrKsn4E4KdQd0CNPugKrH8uQmXEQTlG_JutC8jU |  refresh_token |
 **Body**
 
 <table>
@@ -903,6 +903,7 @@
 
 ## 修改文章评论状态
 <a id=修改文章评论状态> </a>
+
 ### 基本信息
 
 **Path：** /mp/v1_0/comments/status
@@ -1182,8 +1183,8 @@
 **接口描述：**
 <h4>1. 线上地址</h4>
 <pre><code data-language="http" class="lang-http">http://ttapi.research.itcast.cn/mp/v1_0/articles
-
 </code></pre>
+
 <h3>2.&nbsp; 返回HTTP状态码</h3>
 <p><strong>1. 200 OK</strong><br>
 2. 400 请求参数错误<br>
@@ -1208,16 +1209,7 @@
 | page | 否  |   |  页数 |
 | per_page | 否  |   |  每页数量 |
 | response_type | 否  |   |  返回数据的字段，不传返回用于内容管理的字段，传comment 返回用于评论管理的字段，传statistic 返回用于图文数据的字段 |
-**Body**
 
-<table>
-  <thead class="ant-table-thead">
-    <tr>
-      <th key=name>名称</th><th key=type>类型</th><th key=required>是否必须</th><th key=default>默认值</th><th key=desc>备注</th><th key=sub>其他信息</th>
-    </tr>
-  </thead><tbody className="ant-table-tbody"><tr key=0-0><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> mobile</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span>手机号</span></td><td key=5></td></tr><tr key=0-1><td key=0><span style="padding-left: 0px"><span style="color: #8c8a8a"></span> code</span></td><td key=1><span>string</span></td><td key=2>必须</td><td key=3></td><td key=4><span>验证码</span></td><td key=5></td></tr>
-               </tbody>
-              </table>
 
 ### 返回数据
 
