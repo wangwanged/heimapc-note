@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+</head>
+
+<body>
+ <div id="app">
+     <test-a ref="myFirstTest"></test-a>
+     <test-a ref="mySecondTest"></test-a>
+     <button @click="changeName">改变第一个张三的值</button>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ <script>
+    //  注册一个全局组件
+    Vue.component("test-a", {
+        template:  ` <div> {{ name }} </div>`,
+        data () {
+            return {
+                name: '张三'
+            }
+        },
+        methods: {
+            setActiveItem (name) {
+                this.name = name
+            }
+        }
+    })
+ var vm = new Vue({
+    el:'#app',
+    data:{},
+    methods:{
+        changeName () {
+            // 可以用父子传值
+          //  this.$refs.myFirstTest 获取到是就是第一个组件的实例
+          this.$refs.myFirstTest.setActiveItem('王五') // 直接调用方法
+          this.$refs.mySecondTest.setActiveItem('赵六')
+        }
+    }
+  });
+ </script>
+</body>
+
+</html>

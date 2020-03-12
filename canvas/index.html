@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+        <canvas id="myCanvas" width="500" height="400" style=" border:2px dashed #ccc;  "></canvas>
+        <!-- <button onclick="drawLine()">画线</button> -->
+        <button onclick="drawRect()">画矩形</button>
+
+    <script>
+        var context = document.getElementById('myCanvas').getContext('2d')
+        // var startX = 10,startY = 10
+        //   var drawLine = function () {
+        //     context.beginPath() // 开始一个点
+        //     context.moveTo(startX, startY)
+        //     context.lineTo(100, 100)
+        //     context.stroke() 
+        //     context.closePath()
+        //   } 
+          var drawRect = function () {
+            context.fillStyle='red'
+            context.fillRect(20,20,100,100);
+
+          }
+    </script>
+</body>
+</html>

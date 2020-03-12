@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一个Canvas实例</title>
+</head>
+<body>
+    <!-- Html5提供了canvas标签 如果想要作画,必须有一个canvas容器 -->
+    <!-- 注意 不要在style中给canvas高度和宽度 -->
+    <canvas width="500" height="500" id="myCanvas" style='border: 2px  dashed #ccc'></canvas>
+    <button onclick="drawLine()">画线</button>
+    <button onclick="drawRect()">画矩形</button>
+    <button onclick="drawArc()">画圆</button>
+    <script>
+    //  脚本
+     // 作画之前 需要用 画笔 (context) 来作画
+     // 画笔 等于 canvas的dom对象调用 getContext('2d') // 平面作画的画笔
+    var context =  document.getElementById("myCanvas").getContext('2d')
+    // 画线方法
+    var drawLine = function () {
+    //   需要用画笔
+       context.beginPath() // 开始一个路径
+    //   画布中的坐标系 从左上角开始 坐标系是 0 ,0 
+      context.moveTo(0,0) // 来到左上角
+      context.lineTo(500,500) // 从左上角 到右下角
+      context.lineWidth = 14
+      context.stroke()
+      context.closePath() // 关闭当前路径 下次不会连上
+    }
+    // 矩形本身就是一个闭环 不用begin 和 close
+    var drawRect = function () {
+     //  context.strokeRect(0,0, 500,500) //在画布内画一个矩形 覆盖样式
+     context.fillStyle = '#fff'
+     context.fillRect(0,0, 500,500) //在画布内画一个矩形 覆盖样式
+    }
+    var drawArc = function () {
+        context.arc(250, 250, 100, 0, 0.5 * Math.PI, false)
+        // 画圆也需要 stroke 因为圆不是闭环 可以画半圆
+        context.stroke() // 画上路径
+    }
+    </script>
+</body>
+</html>
